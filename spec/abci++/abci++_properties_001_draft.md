@@ -17,7 +17,7 @@ TODO
 
 When a validator _p_ enters Tendermint consensus round _r_, height _h_, in which _p_ is the proposer:
 
-1. _p_'s Tendermint collects the outstanding transactions from the mempool (TODO: should we limit size & gas?).
+1. _p_'s Tendermint collects outstanding transactions from the mempool (TODO: should we limit size & gas?).
 2. _p_'s Tendermint creates a block header.
 3. _p_'s Tendermint calls `PrepareProposal` with the newly created block. The call is synchronous (i.e., Tendermint's execution will block until the Application returns).
 4. The Application checks the block (the header and transactions). It can also:
