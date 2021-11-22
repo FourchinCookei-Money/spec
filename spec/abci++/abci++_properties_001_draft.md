@@ -24,7 +24,7 @@ When a validator _p_ enters Tendermint consensus round _r_, height _h_, in which
    * add/remove transactions
    * modify the header hashes
    * if the block is modified, the Application sets it in the return parameters
-5. The Application signals _Accept_ of _Reject_ in `PrepareProposal`'s return values
+5. The Application signals _Accept_ or _Reject_ in `PrepareProposal`'s return values
    * TODO: Decide if this kind if Accept/Reject is wanted/covered by impl (maybe a panic here makes more sense?)
    * If _Reject_, the proposed block --along with any modification-- is discarded. Tendermint interprets that there is nothing to be proposed for consensus at the moment and _p_ won't send any proposal message in round _r_, height _h_.
    * If _Accept_, _p_'s Tendermint uses the modified block as _p_'s proposal in round _r_, height _h_.
